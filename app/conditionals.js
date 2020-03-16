@@ -2,6 +2,12 @@
 
 function largerNum(num1, num2) {
     // you code here
+    if ( num1 > num2) {
+        return num1
+    }
+    else{
+        return num2
+    }
 
 }
 
@@ -14,7 +20,23 @@ function largerNum(num1, num2) {
 // output: "F"
 
 function testGrader(score, possible) {
+    let percent = score / possible
 
+    if (percent > .9 ){
+        return 'A'
+    }
+    else if(percent > .8){
+        return 'B'
+    }
+    else if(percent > .7){
+        return 'C'
+    }
+    else if(percent > .6){
+        return 'D'
+    }
+    else {
+        return 'F'
+    }
 }
 
 
@@ -30,11 +52,35 @@ function testGrader(score, possible) {
 
 function timeOfDayGreeting(hour) {
     // you code below
+    if (hour > 21) {
+        return 'good night'
+    } 
+    else if (hour > 17) {
+        return 'good evening'
+    } 
+    else if (hour > 11) {
+        return 'good afternoon'
+    } 
+    else if (hour > 4) {
+        return 'good morning'
+    } 
+    else {
+        return'good night'
+    } 
 
 }
 
 //4. Write a function that will take in a number and return 'fever' if it indicates a fever (over 98.6) and additionally if the person should go to the hospital (at or above 103) 'fever go to hospital' (hint: try this with string concatenation), if it is under return 'no fever'
 function isFever(temp) {
+    let msg = ''
+    if (temp > 98.6) { 
+        msg = 'fever'
+        if (temp >= 103){
+            msg = msg +  ' go to hospital'
+        }
+    }  else { msg = 'no fever'}
+
+    return msg
 
 }
 
@@ -47,6 +93,7 @@ let myCar = {
 }
 
 function isStopped(car) {
+    return !car.moving
 
 }
 
@@ -58,5 +105,6 @@ let dish = {
 }
 
 function washDish(dish) {
+    return (dish.yourDish && dish.isDirty)
 
 }
